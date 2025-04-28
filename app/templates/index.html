@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ESTUDO FLASK</title>
-</head>
-<body>
-    <div class="cabecalho">
-        <a href="{{url_for('contato')}}">Cadastrar</a>
-    </div>
-
+{%extends 'base.html'%}
+{%block content%}
     <div>
+        <img src="{{url_for('static', filename='img/logo_mobi.png')}}" alt="">
         <h5>Bem Vindos!</h5>
         <p>{{usuario}}</p>
+
+        <div class="cabecalho">
+            {%include 'nav.html'%}
+        </div>
+    
     </div>
-</body>
-</html>
+
+    
+{%endblock%}

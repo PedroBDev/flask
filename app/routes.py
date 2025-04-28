@@ -22,6 +22,14 @@ def contato():
     return render_template('contato.html', context=context, forms=form)
 
 
+@app.route('/Contato/lista')
+def contatoLista():
+
+    dados = Contato.query.all()
+    context={'dados': dados}
+
+    return render_template('contato_lista.html', context=context)
+
 #Formulario via html(para fins de estudo), não é recomendado para aplicações ativas na web, pois é menos seguro.
 @app.route('/Contato_old', methods=('GET', 'POST'))
 def contato_old():
